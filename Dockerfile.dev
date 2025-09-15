@@ -1,0 +1,16 @@
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+COPY tsconfig.json ./
+
+RUN npm install
+
+COPY . .
+
+# Exponer puerto de la app
+EXPOSE ${PORT}
+
+# Hot reload con nodemon
+CMD ["npx", "nodemon","--exec", "src/index.ts"]

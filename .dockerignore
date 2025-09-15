@@ -1,0 +1,17 @@
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Output de TypeScript
+dist
+build
+
+# Configuración local
+.env
+*.local
+
+# Archivos de sistema
+.DS_Store
+.git
+.gitignore
