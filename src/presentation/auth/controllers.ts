@@ -1,11 +1,9 @@
 import { Request, Response } from "express";
-import { LoginUserDTO, RegisterUserDTO } from "../../domain";
-import { AuthRepository } from "../../domain/repositories/auth.repository";
-import { CustomError } from "../../domain/errors/custom.error";
-import { JwtAdapter } from "../../config";
-import { RegisterUser } from "../../domain/use-cases/auth/register-user.use-case";
-import { GetUsers } from "../../domain/use-cases/users/get-users.use-case";
-import { LoginUser } from "../../domain/use-cases/auth/login-user.use-case";
+
+import { AuthRepository, CustomError } from "../../domain";
+import { GetUsers, LoginUser, LoginUserDTO, RegisterUser, RegisterUserDTO } from "../../application";
+import { JwtAdapter } from "../../infraestructure";
+
 
 export class AuthController {
     // Injección de dependencias, no usar las implementaciones directas

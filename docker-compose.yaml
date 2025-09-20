@@ -11,26 +11,26 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - /home/fercho/Contenedores/mongodb/data:/data/db
-    # networks:
-    #   - app-network
-#   app:
-#     build: .
-#     container_name: node-app
-#     restart: always
-#     ports:
-#       - "${PORT}:${PORT}"
-#     environment:
-#       PORT: ${PORT}
-#       DB_HOST: mongodb        # usamos el nombre del servicio como host
-#       DB_PORT: 27017
-#       DB_USER: ${DB_USER}
-#       DB_PASSWORD: ${DB_PASSWORD}
-#       DB_NAME: ${DB_NAME}
-#     depends_on:
-#       - mongodb
-#     networks:
-#       - app-network
+    networks:
+      - app-network
+  app:
+    build: .
+    container_name: node-app
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      PORT: ${PORT}
+      DB_HOST: mongodb        # usamos el nombre del servicio como host
+      DB_PORT: 27017
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
 
-# networks:
-#   app-network:
-#     driver: bridge
+networks:
+  app-network:
+    driver: bridge

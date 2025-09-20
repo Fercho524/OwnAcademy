@@ -1,11 +1,13 @@
-import { UserModel } from "../../data";
-import { LoginUserDTO, RegisterUserDTO, UserEntity } from "../../domain";
-import { AuthDataSource } from "../../domain/datasources/auth.datasource";
-import { CustomError } from "../../domain/errors/custom.error";
+import { AuthDataSource, CustomError, UserEntity } from "../../domain";
+import { LoginUserDTO, RegisterUserDTO } from "../../application";
+
+import { UserModel } from "../data/mongodb";
 import { UserMapper } from "../mappers/user.mapper";
+
 
 type HashFunction = (password: string) => string;
 type CompareFunction = (password: string, hashed: string) => boolean;
+
 
 interface userData {
     id: string;

@@ -1,4 +1,4 @@
-import { Validators } from "../../../config/validators";
+import { Validators } from "../../validators";
 
 
 export class RegisterUserDTO {

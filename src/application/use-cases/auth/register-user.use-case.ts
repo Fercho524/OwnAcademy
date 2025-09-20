@@ -1,8 +1,6 @@
-import { JwtAdapter } from "../../../config";
-import { RegisterUserDTO } from "../../dtos/auth/register-user.dto";
-import { CustomError } from "../../errors/custom.error";
-import { AuthRepository } from "../../repositories/auth.repository";
-import { UserToken } from "../../interfaces/UserToken.interface";
+import { RegisterUserDTO } from "../../dtos";
+import { JwtAdapter } from "../../../infraestructure";
+import { AuthRepository, CustomError, UserToken} from "../../../domain/index";
 
 
 interface RegisterUserUseCase {

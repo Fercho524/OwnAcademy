@@ -1,5 +1,5 @@
-import { CustomError } from "../../errors/custom.error";
-import { AuthRepository } from "../../repositories/auth.repository";
+import { AuthRepository, CustomError } from "../../../domain";
+
 
 interface GetUsersUseCase {
     execute(): Promise<Object[] | null>;

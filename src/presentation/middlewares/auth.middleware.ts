@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { JwtAdapter } from "../../config";
-import { UserModel } from "../../data";
+import { JwtAdapter, UserModel } from "../../infraestructure";
+
 
 export class AuthMiddleWare {
     static async validateJWT(req:Request,res:Response,next:NextFunction){
